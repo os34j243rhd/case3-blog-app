@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог — Вход</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Мой блог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h2>Вход</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Логин" required autocomplete="username">
+                <input type="password" id="login-password" placeholder="Пароль" required autocomplete="current-password">
+                <button type="submit">Войти</button>
+            </form>
+            <p id="login-error" class="error"></p>
+            <p class="auth-switch">
+                Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.bindLoginForm();
+        });
+    </script>
+</body>
+</html>

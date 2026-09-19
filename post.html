@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог — Пост</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Мой блог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="profile.html">Профиль</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="post-form-title">Создать пост</h2>
+        <form id="post-form">
+            <input type="hidden" id="post-id">
+            <input type="text" id="post-title" placeholder="Заголовок" required>
+            <textarea id="post-text" placeholder="Текст поста" rows="8" required></textarea>
+            <input type="text" id="post-tags" placeholder="Теги через запятую: жизнь, учеба, it">
+            <label>
+                <input type="checkbox" id="post-public" checked>
+                Публичный пост
+            </label>
+            <button type="submit">Сохранить</button>
+        </form>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.initHeader();
+            Posts.bindPostForm();
+        });
+    </script>
+</body>
+</html>

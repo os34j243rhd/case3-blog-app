@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог — Профиль</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Мой блог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="post.html">Создать пост</a>
+            <span id="user-info"></span>
+            <button id="logout-btn" style="display:none;">Выйти</button>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Профиль: <span id="profile-username"></span></h2>
+
+        <section>
+            <h3>Мои посты</h3>
+            <div id="my-posts"></div>
+        </section>
+
+        <section>
+            <h3>Мои подписки</h3>
+            <div id="my-subscriptions"></div>
+        </section>
+
+        <section>
+            <h3>Подписчики</h3>
+            <div id="my-followers"></div>
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/subscriptions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.initHeader();
+            Subscriptions.renderProfile();
+        });
+    </script>
+</body>
+</html>

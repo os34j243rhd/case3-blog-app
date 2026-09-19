@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог — Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Мой блог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="post.html">Создать пост</a>
+            <a href="profile.html">Профиль</a>
+            <span id="user-info"></span>
+            <button id="logout-btn" style="display:none;">Выйти</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2>Лента постов</h2>
+            <div class="filters">
+                <label>
+                    Показать:
+                    <select id="feed-filter">
+                        <option value="all">Все публичные</option>
+                        <option value="subscriptions">Только подписки</option>
+                        <option value="my">Мои посты</option>
+                    </select>
+                </label>
+                <label>
+                    Сортировка по тегу:
+                    <select id="tag-filter">
+                        <option value="">Все теги</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <section id="posts-container">
+            <!-- Посты рендерятся через JS -->
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/subscriptions.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/tags.js"></script>
+    <script>
+        // Инициализация главной страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.initHeader();
+            Posts.renderFeed();
+            Tags.fillTagFilter();
+
+            const filter = document.getElementById('feed-filter');
+            if (filter) filter.addEventListener('change', () => Posts.renderFeed());
+        });
+    </script>
+</body>
+</html>

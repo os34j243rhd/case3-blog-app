@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог — Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>📝 Мой блог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <input type="text" id="reg-username" placeholder="Логин (мин. 3 символа)" required autocomplete="username">
+                <input type="password" id="reg-password" placeholder="Пароль (мин. 4 символа)" required autocomplete="new-password">
+                <input type="password" id="reg-password2" placeholder="Повторите пароль" required autocomplete="new-password">
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p id="reg-error" class="error"></p>
+            <p id="reg-success" class="success"></p>
+            <p class="auth-switch">
+                Уже есть аккаунт? <a href="login.html">Войти</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.bindRegisterForm();
+        });
+    </script>
+</body>
+</html>

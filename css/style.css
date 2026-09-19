@@ -1,0 +1,429 @@
+/* ===== Базовые сбросы ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Шапка ===== */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+header h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header nav a,
+header nav button {
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+header nav a:hover,
+header nav button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+}
+
+#user-info {
+    color: #ecf0f1;
+    font-size: 0.95em;
+}
+
+/* ===== Основной контейнер ===== */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.3em;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* ===== Блок управления лентой ===== */
+.controls {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.filters label {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.filters select {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95em;
+    margin-left: 5px;
+}
+
+/* ===== Посты ===== */
+.post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.post h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.15em;
+}
+
+.post .meta {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post p {
+    margin: 10px 0;
+}
+
+.post .tags {
+    margin: 10px 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #e1ecf4;
+    color: #2c3e50;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+/* Скрытый пост */
+.hidden-post {
+    opacity: 0.75;
+    border-left: 4px solid #f39c12;
+}
+
+/* Кнопки действий */
+.post .actions {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.post .actions button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.post .actions button:hover {
+    background: #2980b9;
+}
+
+.post .actions button.delete {
+    background: #e74c3c;
+}
+
+.post .actions button.delete:hover {
+    background: #c0392b;
+}
+
+/* ===== Комментарии ===== */
+.comments {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 0.95em;
+}
+
+.comments > strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.comment {
+    background: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.comment strong {
+    color: #2c3e50;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.comment-form button {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95em;
+    transition: background 0.2s;
+}
+
+.comment-form button:hover {
+    background: #219150;
+}
+
+/* ===== Формы (создание поста) ===== */
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+form label input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #219150;
+}
+
+/* ===== Аутентификация ===== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.auth-box button:hover {
+    background: #2980b9;
+}
+
+.auth-switch {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.auth-switch a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Сообщения ===== */
+.error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 1.2em;
+}
+
+.success {
+    color: #27ae60;
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 1.2em;
+}
+
+/* ===== Профиль ===== */
+#my-posts .post,
+#my-subscriptions,
+#my-followers {
+    margin-top: 10px;
+}
+
+#my-subscriptions .tag,
+#my-followers .tag {
+    margin-bottom: 5px;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .controls {
+        padding: 12px 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .comment-form {
+        flex-direction: column;
+    }
+}
